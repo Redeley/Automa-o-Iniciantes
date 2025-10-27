@@ -1,0 +1,14 @@
+---
+- name: Executar criação e envio de request
+  hosts: all
+  become: true
+  tasks:
+    - name: Executar o binário createRequest
+      command: ./createRequest
+      args:
+        chdir: /root/RequestCreator
+
+    - name: Executar o script sendRequest
+      command: ./sendRequest
+      args:
+        chdir: /root/RequestCreator/create
