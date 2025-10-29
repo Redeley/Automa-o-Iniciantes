@@ -8,7 +8,25 @@
       args:
         chdir: /root/RequestCreator
 
+    - name: Executar o script teste.py
+      command: python3 teste.py
+      args:
+        chdir: /root/RequestCreator/create
+
     - name: Executar o script sendRequest
       command: ./sendRequest
       args:
         chdir: /root/RequestCreator/create
+
+    - name: Encontrar arquivos no diretório /root/RequestCreator/requests
+      find:
+        paths: /root/RequestCreator/requests
+        file_type: file
+      register: arquivos_encontrados
+
+    - name: Remover arquivos encontrados
+      file:
+        path: "{{ item.path }}"
+        state: absent
+      loop: "{{ arquivos_encontrados.files }}"
+      when: arquivos_encontrados.matched > 0
