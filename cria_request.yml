@@ -8,10 +8,10 @@
       args:
         chdir: /root/RequestCreator
 
-    - name: Executar o script teste.py
-      command: python teste.py
-      args:
-        chdir: /root/RequestCreator/create
+    - name: Executar o script teste.py com python3
+	  command: python3 teste.py
+	  args:
+		chdir: /root/RequestCreator/create
 
     - name: Executar o script sendRequest
       command: ./sendRequest
