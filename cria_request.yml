@@ -8,8 +8,8 @@
       args:
         chdir: /root/RequestCreator
 
-    - name: Executar o script teste.py com python3
-      command: python3 teste.py
+    - name: Executar o script teste.py
+      command: /root/.pyenv/shims/python teste.py
       args:
         chdir: /root/RequestCreator/create
 
