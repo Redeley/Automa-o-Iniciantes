@@ -9,7 +9,7 @@
         chdir: /root/RequestCreator
 
     - name: Executar o script teste.py
-      command: python3 teste.py
+      command: python teste.py
       args:
         chdir: /root/RequestCreator/create
 
